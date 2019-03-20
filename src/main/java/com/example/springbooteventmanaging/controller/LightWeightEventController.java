@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LightWeightEventController {
     @GetMapping("/")
-    public String listAllEventsOnStart(){
+    public String list(){
 		// Verweis auf das Template "events"
         return "events_page";
     }

@@ -17,8 +17,10 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+//@Entity annotation over a class defines that, it has a distinct separate existence
 @Entity
 @Table(name = "events") // schema: klein,mehrzahl
+
 public class Event implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,8 +43,7 @@ public class Event implements Serializable{
     @CreationTimestamp
     private Date   ScheduleDate;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "ORGANIZER_ID")
+    @Embedded
     private Organizer Provider;
 
 

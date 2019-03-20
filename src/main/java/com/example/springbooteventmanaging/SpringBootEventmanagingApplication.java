@@ -10,7 +10,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 @SpringBootApplication
 @RestController
 @EnableAutoConfiguration
-public class SpringBootEventmanagingApplication {
+public class SpringBootEventmanagingApplication
+{
 
 	@RequestMapping("/testaufruf")
 	String home() {

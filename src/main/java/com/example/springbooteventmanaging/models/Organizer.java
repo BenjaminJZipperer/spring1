@@ -2,12 +2,9 @@ package com.example.springbooteventmanaging.models;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import org.springframework.context.annotation.*;
-import javax.persistence.Table;
 
 /**
  * Organizer = Veranstalter eines Events | Verarbeitung z.B. als SELECTBOX (Auswahl des Veranstalters
@@ -16,13 +13,12 @@ import javax.persistence.Table;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
 @Entity
-@Data
+@Embeddable @Access(AccessType.FIELD)
 public class Organizer {
 
-    @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    private int Org_id;
+    @Id private int Id;
     private String NameOrganizer;
     private String Address;
     private String city;
