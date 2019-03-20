@@ -28,6 +28,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<!--for example (the default with spring-boot-starter-web),-->
 		</dependency>
 
 		<dependency>

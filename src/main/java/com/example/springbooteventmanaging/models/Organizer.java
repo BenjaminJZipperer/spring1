@@ -10,7 +10,7 @@ import org.springframework.context.annotation.*;
  * Organizer = Veranstalter eines Events | Verarbeitung z.B. als SELECTBOX (Auswahl des Veranstalters
  * bei Anlegen eines neuen Events oder direkte Eingabe in Textfeldern ? )
  */
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 

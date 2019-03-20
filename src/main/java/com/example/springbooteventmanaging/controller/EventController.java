@@ -1,22 +1,28 @@
-package com.example.springbooteventmanaging.models;
-
+package com.example.springbooteventmanaging.controller;
+import com.example.springbooteventmanaging.models.EventService;
+import org.springframework.stereotype.Controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
-import java.util.Optional;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.http.MediaType;
 
 
+
+@RequestMapping("/api")
 @RestController
-@RequestMapping("/api/v1/events")
-@Slf4j
-@RequiredArgsConstructor
-public class EventApi {
-    private final EventService service;
+public class EventController
+{
 
+    @RequestMapping(value="/RedirectWithView", method=RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ModelAndView myMethod1 (ModelMap modelsT) {
+
+        return new ModelAndView("welcome.jsp",modelsT);
+    }
+
+/*
     @GetMapping
     public ResponseEntity<List<Event>> findAll() {
         return ResponseEntity.ok(service.findAll());
@@ -67,4 +73,5 @@ public class EventApi {
 
         return ResponseEntity.ok().build();
     }
+    */
 }
