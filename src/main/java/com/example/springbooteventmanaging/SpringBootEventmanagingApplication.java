@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
+import java.math.BigDecimal;
+
 @Log
 @SpringBootApplication
 @RestController
@@ -44,7 +46,7 @@ public class SpringBootEventmanagingApplication
 			current.setEventDescription("Segelflug für Anfänger");
 			current.setLocation("schwäbische Alb");
 			current.setProvider(new Organizer("Super-Events für alle","Bahnhofstrasse 4","Traumstadt",3456,"www.events_for_all.de"));
-
+            current.setPrice(BigDecimal.valueOf(2300.60));
 			repository.save(current);
 
 			// fetch all events so far ...
