@@ -6,16 +6,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.springframework.context.annotation.*;
+import javax.persistence.Table;
 
 /**
  * Organizer = Veranstalter eines Events | Verarbeitung z.B. als SELECTBOX (Auswahl des Veranstalters
  * bei Anlegen eines neuen Events oder direkte Eingabe in Textfeldern ? )
  */
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 @Entity
 @Data
 public class Organizer {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private int Org_id;
     private String NameOrganizer;
     private String Address;
@@ -34,6 +40,8 @@ public class Organizer {
     private String Fax;
     private String Url;
 
+    public Organizer()
+    {}
     public Organizer(String NameOrganizer, String Address, String City, int PostalCode, String Url)
     {
         this.NameOrganizer  = NameOrganizer;
