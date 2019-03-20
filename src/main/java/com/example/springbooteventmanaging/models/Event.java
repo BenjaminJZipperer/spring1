@@ -12,11 +12,17 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity
+@Data
 public class Event {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private String EventDescription;
-    private double Price;
+    private BigDecimal Price;
     private String Location;
+
+    @CreationTimestamp
     private Date   ScheduleDate;
     private Organizer Provider;
 
@@ -39,11 +45,11 @@ public class Event {
         EventDescription = eventDescription;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return Price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         Price = price;
     }
 

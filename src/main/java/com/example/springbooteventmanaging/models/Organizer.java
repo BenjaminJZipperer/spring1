@@ -1,6 +1,21 @@
 package com.example.springbooteventmanaging.models;
 
+import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+/**
+ * Organizer = Veranstalter eines Events | Verarbeitung z.B. als SELECTBOX (Auswahl des Veranstalters
+ * bei Anlegen eines neuen Events oder direkte Eingabe in Textfeldern ? )
+ */
+@Entity
+@Data
 public class Organizer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Org_id;
     private String NameOrganizer;
     private String Address;
